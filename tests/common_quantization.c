@@ -106,11 +106,11 @@ zdnn_ztensor *alloc_quantized_ztensor_with_values(
                                               INT8_MAX, values_data);
   } else if (transform_type == QUANTIZED_WEIGHTS_INT8) {
     size_t num_elements =
-        tfrmd_desc->dim4 * tfrmd_desc->dim2 * tfrmd_desc->dim1;
+        (size_t)tfrmd_desc->dim4 * tfrmd_desc->dim2 * tfrmd_desc->dim1;
 
     int8_t quant_data[num_elements];
     for (size_t i = 0; i < num_elements; ++i) {
-      quant_data[i] = QUANTIZE(values_data[i], scale, offset);
+      quant_data[i] = (int8_t)QUANTIZE(values_data[i], scale, offset);
     }
 
     status = zdnn_transform_quantized_ztensor(ztensor, false, INT8_MIN,
