@@ -498,9 +498,9 @@ zdnn_status transform_ztensor(const void *in_buf, zdnn_ztensor *ztensor,
   uint64_t output_offset =
       0; // moving position as the output is processed, in BYTES
 
-  short input_cell_size =
+  uint8_t input_cell_size =
       get_data_type_size(ztensor->pre_transformed_desc->type);
-  short input_cell_shift = input_cell_size / 2;
+  uint8_t input_cell_shift = input_cell_size / 2;
 
   /*
    * Stores the vector operation output directly into the stick_area.  This
@@ -808,9 +808,9 @@ zdnn_status transform_bidir_weight_ztensor(const void *in_buf,
   uint64_t input_offset = 0;
   uint64_t output_offset = 0;
 
-  short input_cell_size =
+  uint8_t input_cell_size =
       get_data_type_size(ztensor->pre_transformed_desc->type);
-  short input_cell_shift = input_cell_size / 2;
+  uint8_t input_cell_shift = input_cell_size / 2;
 
   uint32_t fields_to_convert;
   uint32_t nbr_fields_converted;
@@ -1982,9 +1982,9 @@ zdnn_status transform_origtensor(const zdnn_ztensor *ztensor, void *out_buf) {
   uint64_t input_offset =
       0; // moving position as the input is processed, in BYTES
 
-  short output_cell_size =
+  uint8_t output_cell_size =
       get_data_type_size(ztensor->pre_transformed_desc->type);
-  short output_cell_shift = output_cell_size / 2;
+  uint8_t output_cell_shift = output_cell_size / 2;
 
   uint32_t fields_to_convert;    // number of fields to actually convert
   uint32_t nbr_fields_converted; // number of fields converted

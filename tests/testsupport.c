@@ -218,7 +218,7 @@ size_t *alloc_rnn_offsets(const zdnn_ztensor *ztensor) {
         get_num_elements(&slice_ztensor, ELEMENTS_PRE);
     uint64_t slice_size = zdnn_getsize_ztensor(slice_ztensor.transformed_desc);
 
-    short num_slices =
+    uint8_t num_slices =
         get_data_layout_num_gates(ztensor->transformed_desc->layout);
     offsets = malloc(num_slices * slice_total_elements * sizeof(size_t));
 
@@ -270,7 +270,7 @@ size_t *alloc_rnn_offsets(const zdnn_ztensor *ztensor) {
                             AIU_BYTES_PER_STICK);
     }
 
-    short num_slices =
+    uint8_t num_slices =
         get_data_layout_num_gates(ztensor->transformed_desc->layout);
 
     offsets = malloc(ztensor->pre_transformed_desc->dim3 * num_slices *
