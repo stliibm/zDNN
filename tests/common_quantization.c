@@ -138,14 +138,11 @@ zdnn_ztensor *alloc_quantized_ztensor_with_values(
 /// \endcode
 ///
 /// \param[in] ztensor pointer to zdnn_ztensor with actual values
-/// \param[in] repeat_first_expected_value if true, all ztensor values will be
-///                                        compared to values[0]
 /// \param[in] expected_vals array of expected quantized values
 ///
 /// \return None (assert fails if any actual value not within expected range)
 ///
 void assert_quantized_ztensor_values(zdnn_ztensor *ztensor,
-                                     bool repeat_first_expected_value,
                                      const float *expected_vals) {
   zdnn_status status;
   zdnn_tensor_desc *pre_tfrmd_desc = ztensor->pre_transformed_desc;
@@ -259,14 +256,11 @@ void assert_quantized_ztensor_values(zdnn_ztensor *ztensor,
 /// \endcode
 ///
 /// \param[in] ztensor pointer to zdnn_ztensor with actual values
-/// \param[in] repeat_first_expected_value if true, all ztensor values will be
-///                                        compared to values[0]
 /// \param[in] expected_vals array of expected quantized values
 ///
 /// \return None (assert fails if any actual value not within expected range)
 ///
 void assert_dequantized_ztensor_values(zdnn_ztensor *ztensor,
-                                       bool repeat_first_expected_value,
                                        const float *expected_vals) {
   zdnn_status status;
   zdnn_tensor_desc *pre_tfrmd_desc = ztensor->pre_transformed_desc;
@@ -382,14 +376,11 @@ void assert_dequantized_ztensor_values(zdnn_ztensor *ztensor,
 /// \endcode
 ///
 /// \param[in] ztensor pointer to zdnn_ztensor with actual values
-/// \param[in] repeat_first_expected_value if true, all ztensor values will be
-///                                        compared to values[0]
 /// \param[in] expected_vals array of expected values
 ///
 /// \return None (assert fails if any actual value not within expected range)
 ///
 void assert_quantized_ztensor_compare_values(zdnn_ztensor *ztensor,
-                                             bool repeat_first_expected_value,
                                              const float *expected_vals) {
   zdnn_status status;
   zdnn_tensor_desc *pre_tfrmd_desc = ztensor->pre_transformed_desc;
