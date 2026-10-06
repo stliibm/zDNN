@@ -56,13 +56,10 @@ zdnn_ztensor *alloc_quantized_ztensor_with_values(
     const float scale, const float offset);
 
 void assert_quantized_ztensor_values(zdnn_ztensor *ztensor,
-                                     bool repeat_first_expected_value,
                                      const float *expected_vals);
 
 void assert_dequantized_ztensor_values(zdnn_ztensor *ztensor,
-                                       bool repeat_first_expected_value,
                                        const float *expected_vals);
 
 void assert_quantized_ztensor_compare_values(zdnn_ztensor *ztensor,
-                                             bool repeat_first_expected_value,
                                              const float *expected_vals);
