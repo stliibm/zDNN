@@ -28,7 +28,8 @@
  * undefined dimension's index and 1 its size.
  */
 #define GET_FLAT_IDX(stack, row, col, row_size, col_size)                      \
-  (uint64_t)(stack) * (row_size) * (col_size) + (row) * (col_size) + (col)
+  (uint64_t)(stack) * (uint64_t)(row_size) * (uint64_t)(col_size) +            \
+      (uint64_t)(row) * (uint64_t)(col_size) + (uint64_t)(col)
 
 /**
  * Helper macro that given a real value, a scale, and an offset, will produce
