@@ -154,6 +154,7 @@ void test_stickify_with_saturation_dims(zdnn_data_layouts layout,
     free(in_data);
     free(saturated_data);
     free(out_data);
+    zdnn_free_ztensor_buffer(&ztensor);
     TEST_FAIL_MESSAGE("Unable to allocate required data");
     // Stop here to prevent segfaults and double-free.
     return;
