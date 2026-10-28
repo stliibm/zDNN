@@ -134,7 +134,7 @@ zdnn_ztensor *alloc_quantized_ztensor_with_values(
 ///
 /// Example usage:
 /// \code
-///  assert_quantized_ztensor_values(&ztensor, false, values);
+///  assert_quantized_ztensor_values(&ztensor, values);
 /// \endcode
 ///
 /// \param[in] ztensor pointer to zdnn_ztensor with actual values
@@ -252,7 +252,7 @@ void assert_quantized_ztensor_values(zdnn_ztensor *ztensor,
 ///
 /// Example usage:
 /// \code
-///  assert_dequantized_ztensor_values(&ztensor, false, values);
+///  assert_dequantized_ztensor_values(&ztensor, values);
 /// \endcode
 ///
 /// \param[in] ztensor pointer to zdnn_ztensor with actual values
@@ -372,7 +372,7 @@ void assert_dequantized_ztensor_values(zdnn_ztensor *ztensor,
 ///
 /// Example usage:
 /// \code
-///  assert_quantized_ztensor_values(&ztensor, false, values);
+///  assert_quantized_ztensor_compare_values(&ztensor, values);
 /// \endcode
 ///
 /// \param[in] ztensor pointer to zdnn_ztensor with actual values
