@@ -268,8 +268,7 @@ void do_bidir_layer(zdnn_ztensor *input, uint32_t num_hidden,
 }
 
 // Sample: LSTM multi-layer BIDIR
-int main(int argc __attribute__((unused)),
-         char *argv[] __attribute__((unused))) {
+int main(void) {
   zdnn_status status;
 
 #ifdef STATIC_LIB
